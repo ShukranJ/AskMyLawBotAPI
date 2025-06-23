@@ -1,0 +1,6 @@
+@AskMyLawBotAPI_HostAddress = http://localhost:5280
+
+GET {{AskMyLawBotAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
