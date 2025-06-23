@@ -14,8 +14,9 @@ app.MapPost("/ask", async (HttpRequest request) =>
     var question = data?["question"] ?? "No question provided.";
     var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
-    using var client = new HttpClient();
-    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
+   using var client = new HttpClient();
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
+
 
     var payload = new
     {
