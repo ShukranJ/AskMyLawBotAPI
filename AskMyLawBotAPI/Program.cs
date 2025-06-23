@@ -12,7 +12,7 @@ app.MapPost("/ask", async (HttpRequest request) =>
     var data = JsonSerializer.Deserialize<Dictionary<string, string>>(body);
 
     var question = data?["question"] ?? "No question provided.";
-    var openAiKey = "YOUR_OPENAI_API_KEY"; // Replace this
+    var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
     using var client = new HttpClient();
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
@@ -40,6 +40,7 @@ app.MapPost("/ask", async (HttpRequest request) =>
 
     return Results.Json(new { reply });
 });
+
 app.MapGet("/", () => "Welcome to AskMyLawBotAPI!");
 
 app.Run();
