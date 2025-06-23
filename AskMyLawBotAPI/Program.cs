@@ -36,7 +36,8 @@ if (string.IsNullOrEmpty(openAiKey))
 
     var payload = new
     {
-        model = "gpt-4o",
+      model = "gpt-3.5-turbo"
+ ,
         messages = new[]
         {
             new { role = "system", content = "You are a helpful legal assistant. Be clear, but do not give real legal advice." },
