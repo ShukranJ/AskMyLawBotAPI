@@ -40,5 +40,6 @@ app.MapPost("/ask", async (HttpRequest request) =>
 
     return Results.Json(new { reply });
 });
+app.MapGet("/", () => "Welcome to AskMyLawBotAPI!");
 
 app.Run();
