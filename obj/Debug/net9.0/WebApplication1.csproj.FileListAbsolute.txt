@@ -31,3 +31,14 @@
 /Users/shukran/AskMyLawBotAP/WebApplication1/obj/Debug/net9.0/WebApplication1.pdb
 /Users/shukran/AskMyLawBotAP/WebApplication1/obj/Debug/net9.0/WebApplication1.genruntimeconfig.cache
 /Users/shukran/AskMyLawBotAP/WebApplication1/obj/Debug/net9.0/ref/WebApplication1.dll
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.csproj.AssemblyReference.cache
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.AssemblyInfoInputs.cache
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.AssemblyInfo.cs
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.csproj.CoreCompileInputs.cache
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.sourcelink.json
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.dll
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/refint/WebApplication1.dll
+/Users/shukran/AskMyLawBotAPI/obj/Debug/net9.0/WebApplication1.pdb

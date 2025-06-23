@@ -80,11 +80,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shukran/AskMyLawBotAP/WebApplication1/WebApplication1.csproj",
+      "projectUniqueName": "/Users/shukran/AskMyLawBotAPI/WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "/Users/shukran/AskMyLawBotAP/WebApplication1/WebApplication1.csproj",
+      "projectPath": "/Users/shukran/AskMyLawBotAPI/WebApplication1.csproj",
       "packagesPath": "/Users/shukran/.nuget/packages/",
-      "outputPath": "/Users/shukran/AskMyLawBotAP/WebApplication1/obj/",
+      "outputPath": "/Users/shukran/AskMyLawBotAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/shukran/.nuget/NuGet/NuGet.Config"

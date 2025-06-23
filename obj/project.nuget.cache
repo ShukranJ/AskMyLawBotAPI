@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H+6pw35iTR4=",
+  "dgSpecHash": "vPkfQVDUWE8=",
   "success": true,
-  "projectFilePath": "/Users/shukran/AskMyLawBotAP/WebApplication1/WebApplication1.csproj",
+  "projectFilePath": "/Users/shukran/AskMyLawBotAPI/WebApplication1.csproj",
   "expectedPackageFiles": [
     "/Users/shukran/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
     "/Users/shukran/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
