@@ -7,16 +7,32 @@ var app = builder.Build();
 
 app.MapPost("/ask", async (HttpRequest request) =>
 {
-    using var reader = new StreamReader(request.Body);
-    var body = await reader.ReadToEndAsync();
-    var data = JsonSerializer.Deserialize<Dictionary<string, string>>(body);
-
-    var question = data?["question"] ?? "No question provided.";
+    // Get the OpenAI API key from environment variables
     var openAiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
-   using var client = new HttpClient();
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
+if (string.IsNullOrEmpty(openAiKey))
+{
+    return Results.Problem("Missing OpenAI API key.");
+}
 
+
+    using var reader = new StreamReader(request.Body);
+    var body = await reader.ReadToEndAsync();
+
+    Dictionary<string, string>? data;
+    try
+    {
+        data = JsonSerializer.Deserialize<Dictionary<string, string>>(body);
+    }
+    catch
+    {
+        return Results.Problem("Invalid JSON payload.");
+    }
+
+    var question = data?["question"] ?? "No question provided.";
+
+    using var client = new HttpClient();
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
 
     var payload = new
     {
@@ -32,16 +48,29 @@ client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bear
     var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", content);
     var responseBody = await response.Content.ReadAsStringAsync();
 
-    using var doc = JsonDocument.Parse(responseBody);
-    var reply = doc.RootElement
-        .GetProperty("choices")[0]
-        .GetProperty("message")
-        .GetProperty("content")
-        .GetString();
+    if (!response.IsSuccessStatusCode)
+    {
+        return Results.Problem($"OpenAI error: {response.StatusCode}\n{responseBody}");
+    }
 
-    return Results.Json(new { reply });
+    try
+    {
+        using var doc = JsonDocument.Parse(responseBody);
+        var reply = doc.RootElement
+            .GetProperty("choices")[0]
+            .GetProperty("message")
+            .GetProperty("content")
+            .GetString();
+
+        return Results.Json(new { reply });
+    }
+    catch
+    {
+        return Results.Problem("Failed to parse OpenAI response.");
+    }
 });
 
+// Optional root endpoint for testing
 app.MapGet("/", () => "Welcome to AskMyLawBotAPI!");
 
 app.Run();
